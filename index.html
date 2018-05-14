@@ -1,0 +1,422 @@
+<html>
+<head>
+    <title>JS site title</title>
+    <meta charset="utf-8">
+    
+   <script  src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        function valid(){
+            var state = $("input[name='gender']:checked").val();
+            
+            
+            if(!state){
+                $('#message').show();
+                return $("#message").html("<font style='color: red'>Укажите ваш пол!</font><br/>");
+                
+            }        
+            $('#message').hide();
+           alert(state);
+            
+            
+            if(state==male){
+                $("#img1").show();
+            }
+            
+           // $(message).show;
+               
+        }
+        function searching(){
+            var searchingThings = $('div, p'); // р то же самое, что и строчка ниже
+           // searchingThings += $('p');
+        }
+    </script>
+   
+</head>
+<body>
+    
+    
+    
+    
+    
+    
+    
+     <a href="#" id="hide" style="display: none" onclick="return false">Hide a comment</a>
+    <a href="#" id="show">show a comment</a>
+    <br>
+    <div id="comms" style="display: none">
+        <p>comment</p>
+        <p>comment</p>
+        <p>comment</p>
+    </div>
+    <br>
+    
+    
+    
+    
+    
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   
+    
+    <br>
+    <br>
+    
+    
+    <script type="application/javascript">
+        
+        function hiding(){
+            $("#comms").hide(2000,function(){
+            $("#hide").hide(700);
+            $("#show").show(700);
+            });
+        }
+        
+        
+        function showing(){
+            $("#comms").show(2000,function(){
+            $("#hide").show(700);
+            $("#show").hide(700);
+            });
+        }
+        
+        
+        
+        
+        $(document).ready(function(){
+            $("#hide").bind("click", hiding);
+            $("#show").bind("click", showing)  
+            
+        });
+    </script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <img src="1.jpg" alt="image" title="image1"><br/>
+    <img src="2.jpg"><br/>
+    <img src="3.jpg"><br/>
+    <img src="4.jpg" alt="image" title="image4"><br/>
+    
+    <input id="button1" type="button" onclick="search1()" value="search">
+    
+  
+    
+    <script type="text/javascript">
+        function search1(){
+           $(":not(img[alt])").attr("alt", "jQuery"); 
+           // $("img").not("img[alt]");
+            
+            
+            var element = $("img");
+            var text;
+            
+            for(var i=0; i<element.length; i++){
+                
+                text += element[i].alt + "\n";
+                //text += element[i].className + "\n"; ищем классы
+            }
+            alert(text);
+            
+        }
+    </script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+<div id="test1" onclick="$('#test').hide()">Test text</div>   
+    
+    <p class="test">Testing 0</p>
+<div class="test">Testing 1</div>
+<div class="test">Testing 2</div>
+    
+    <script type="text/javascript">
+     /**   var str = "    src   ";
+        alert(str);
+        alert($.trim(str));
+        */
+        
+        /**
+        var test = $('#test').html();
+        alert(test);
+        */
+        
+        var test = $('div.test');
+            for(var i=0; i<test.length; i++){
+                test.get(i).style.color = "red";
+                test.get(i).style.background = "#f99";
+                
+                setTimeout("$('p.test').get(0).style.color = 'grey'", 2000);
+            }
+    
+    </script>
+    
+    
+    
+    <div class="some">Something Container 0</div>
+    <div class="some">Something Container 1</div>
+    <div class="some">Something Container 2</div>
+    
+    
+    
+    <img src="1.jpg" alt="1">
+    <img src="2.jpg" alt="2" title="2">
+    
+    
+    <script type="text/javascript">
+        var some = $('div');
+        
+       // alert(some.length);
+        
+        var img = $('img[title]');
+      //  alert(img.length);
+        
+        
+    </script>
+    
+    
+    
+    
+    
+    <ul id="menu">
+        <li><a href="#">Ссылка 0</a></li>
+        <li><a href="#">Ссылка 1</a></li>
+        <li><a href="#">Ссылка 2</a></li>
+        <li><a href="#">Ссылка 3</a></li>
+        <li><a href="#">Ссылка 4</a></li>
+        <li><a href="#">Ссылка 5</a></li>
+        <li><a href="#">Ссылка 6</a></li>
+    </ul>
+    
+        <a href="#">Link Out</a>
+    
+    
+    
+    <script type="text/javascript">
+       // var link = $('#menu li a:first');
+        
+        var link = $('#menu li a:eq(2)');
+     //   alert(link.html());
+        
+    </script>
+    <br/>
+    <br/>
+    <br/>
+    
+        
+    
+    
+    
+            <!-- 11th LESSON -->
+            <!--  ^   ^ th -->
+            <!-- /|  /|    -->
+            <!--  |   |    -->
+    
+    <form name="form" id="form">
+        <label for="female">Женский</label>
+        <input id="female" type="radio" name="gender" value="female"/> 
+        <label for="male">Мужской</label>
+        <input id="male" type="radio" name="gender" value="male"/> 
+        <br/>
+        <br/>
+        <span id="message"></span>
+        <br/>
+        <br/>
+        
+        <input onclick="return valid()" type="button" id="DONE" value="Send">
+        
+    </form>
+    
+    <img src="1.jpg" id="img1" style="display: none">
+    
+    
+    <div id="gerund"><p>Lorem</p></div>
+    <button onclick="creatingSomething()">create new something</button>
+    
+   
+    <script type="text/javascript">
+        function creatingSomething(){
+          //  $("<h3>some text for example</h3>").appendTo("#gerund"); //append after 
+          //  $("<h3>Some text 2 for exmple</h3>").prependTo("#gerund"); //prepend  before 
+           // $("<h1>Coming Soon</h1>").insertBefore("#gerund"); //перед блоком
+            $("<h1>Coming Soon</h1>").insertAfter("#gerund"); //после блока
+            
+        }
+    </script>
+    
+    <!-- функция val() -->
+    <br>
+    <br>
+    <br>
+    
+    <input type="text" name="text" id="text" />
+    <input type="password" name="password" id="password" />
+    <input type="button" onclick="return showMessageDialog()" value="show message" />
+    
+    
+    <script type="text/javascript">
+        function showMessageDialog(){
+            var text = $("#text").val();
+          
+            alert(text);
+        }
+    </script>
+    
+    <br>
+    <br>
+    <!-- СОБЫТИЯ нужны для того чтобы не писать постоянно онклик ебанный скрипт снизу смотри бля-->
+    
+    <div class="someClass" style="width: 50px; height: 50px; background-color: antiquewhite"></div>
+    <div class="someClass" style="width: 50px; height: 50px; background-color: aquamarine"></div>
+    <div class="someClass" style="width: 50px; height: 50px; background-color: aqua"></div>
+    
+    <script type="text/javascript">
+        
+        function sizing(event){
+            //alert(event.target.style.backgroundColor);
+            //alert(event.currentTarget.style.backgroundColor);
+           var width = Number(event.target.style.width.substring(0, event.target.style.width.length-2));
+                                                //substring преобразовывает стринг в число 0-с какого числа начинать форматинг
+                                                //второе до какого
+                                                //NUMBER  преобразовывает в integere
+                event.target.style.width = (width + 5) + "px";
+            
+                //$(event.target).unbind(); //удаляет функцию слушателя
+            
+            
+                $("<p>координаты нажатия мыши по X- " + event.screenX + ", Y - " + event.screenY + "</p>").insertAfter("div:last");
+            //добавляем координады после последнего div
+                
+            
+            
+        }
+        
+        
+        
+        
+        
+        $(document).ready(function(){
+            $(".someClass").bind("click", sizing); // первый параметр определенное действие, второй функция
+        
+        $(document).on("click", "p", function(){
+            alert("test");
+        });
+            
+            
+            
+        });
+    </script>
+    
+    
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    
+    <div id="comments">
+        <p>Comment #1</p>
+        <p>Comment #2</p>
+        <p>Comment #3</p>
+        <p>Comment #4</p>
+        <p>Comment #5</p>
+    
+    </div>
+    
+    
+    <form name="form" action="#" method="post" id="form" onsubmit="return false" style="display: none">
+        <textarea id="textarea" name="field"></textarea>
+        <input type="submit" name="send" value="Add" id="done_1" />
+    </form>
+    
+    <a href="#" id="add_comment" onclick="return false">Add Comment</a>
+    
+    
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(document).on("click", "#add_comment", function(){
+                var form = $("form[name='form']");
+                form.css("display", "block");
+                $("#add_comment").remove();
+                
+                });
+            
+            $(document).on("click", "input[name='send']", function(){
+                var comment = $("#textarea").val();
+                $("<p>" + comment + "</p>").appendTo("#comments");
+                $("#textarea").empty();
+            });
+            
+            
+            
+        });
+    </script>
+    
+    <br>
+    <br>
+    <br>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</body>
+</html>

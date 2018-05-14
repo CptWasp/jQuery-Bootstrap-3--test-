@@ -1,0 +1,168 @@
+<html>
+<head>
+    <title>second pages title</title>
+    <meta charset="utf-8">
+    
+   <script  src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+   <style type="text/css">
+    .div_1{
+        background-color: aqua;
+        width: 500px;
+        height: 300px;
+    }
+    .div_2{
+        background-color: blueviolet;
+        width: 500px;
+        height: 300px;
+    }
+    #second{
+        background-color: black;
+        width: 500px;
+        height: 300px;
+    }
+    p{
+        font: arial 17px;
+        color: aliceblue;
+    }
+</style>
+</head>
+<body>
+
+    
+    <div id="some_div_0"><h2>Just a Test 0</h2>
+    <button onclick="a()">create img</button></div>
+    
+    <div id="some_div_1"><h2>Just a Test 1</h2></div>
+    <div id="some_div_2"><h2>Just a Test 2</h2></div>
+    <br>
+    <img src="1.png" alt="234">
+    <img src="2.png" alt="234">
+    <img src="3.jpg" alt="32e4">
+    
+    <br>
+    
+    <a href="#">testing Link</a>
+    <a href="#">Second testing Link </a>
+    
+    
+    <script type="text/javascript">
+        function a(){
+        $("div").append("<span>testing span</span>"); //вставляет что
+        var img000 = $("img").clone()
+        $(img000).appendTo($("#some_div_0"));             //вставляет [что] в [куда]
+            
+            
+        // делает теги снаружи 
+            // а помещает в р
+        $("a").wrap("<p class='hrefs'></p>");
+        $("#some_div_2").remove(); //УДАЛЕНИЕ БЛОКА
+            $("#some_div_2").empty(); // ОЧИЩЕНИЕ БЛОКА 
+        
+            
+            /** СОЗДАНИЕ ЭЛЕМЕНТОВ */
+            
+            
+            
+            
+        }
+    </script>
+    
+    
+    
+    <div id="block">
+        loremipsum
+        loremipsum
+        loremipsum
+        loremipsum
+    </div>
+    <button onclick="o()">Create new block</button>
+    
+    
+    <script type="text/javascript">
+            var block = $("#block");
+            block.attr("class", "div_2");
+            block.css("font-size", "35px");
+          
+            block.css("color", function(){
+                return "blue";
+            });
+        
+            block.css("width", "250px");
+        
+        
+            block.css("height", function(){
+             //   var height = prompt("Введите высоту блока");
+               // return $(this).width();
+                return height+"px";
+            });
+        
+    
+    </script>
+    
+    
+     <script type="text/javascript">
+       function o(){
+            var block_1 = $("#block").clone();
+
+            block_1.html("<h1>LOREM IPSUM</h1>"); //можно добавлять стили и другое
+
+            $("body").append(block_1);
+       }
+    </script>
+    
+    
+    
+    
+    
+    <div id="div"></div>
+    
+    <button onclick="FOut()">FadeOut()</button>
+    <button onclick="FIn()" class="button">FadeIn()</button>
+    <div id="second">
+        <br>
+        <br>
+        <br>
+        <p>lorem ipsunlorem ipsunlorem ipsunlorem ipsun</p>
+        <p>lorem ipsunlorem ipsunlorem ipsunlorem ipsun</p>
+        <p>lorem ipsunlorem ipsunlorem ipsunlorem ipsun</p>
+        <p>lorem ipsunlorem ipsunlorem ipsunlorem ipsun</p>
+    </div>
+    
+    
+    <script type="text/javascript">
+        var div = prompt("1 or 2?");
+        // while можно заменить if
+        while(div != 1 && div != 2){
+           // alert("choose Ur color");
+            var div = prompt("1 or 2?");
+        }
+            
+            
+            $("#div").attr("class", "div_" + div);
+          //  alert($("#div").get(0).className);
+            
+        // var state = $("#second:hover");
+        
+        function FOut(){
+            $(document).ready(function(){
+                $("button").click(function(){
+                    $("#second").fadeOut();
+                });
+            });
+        }
+        function FIn(){
+            $(document).ready(function(){
+                $(".button").click(function(){
+                    $("#second").fadeIn();
+                });
+            });
+        }
+            
+         
+    </script>
+    
+
+
+    
+</body>
+</html>
